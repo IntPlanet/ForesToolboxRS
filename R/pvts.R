@@ -49,12 +49,10 @@
 #' cd <- pvts(x=vec, startm=19, endm=19, threshold= 5)
 #'
 #' # Example 2.
-#' imgs <- system.file("PVts",package = "ForesToolboxRS") %>%
-#'   list.files(full.names = TRUE) %>%
-#'   stack()
+#' data(FTdata)
 #'
-#' # Change monitoring period 2006-2016. Where 2006 is position 7 and 2016 is position 16
-#' cd <- pvts(x=imgs, startm=7, endm=16, threshold=3) # EVI indices
+#' # Change monitoring period 2006-2016. Where 2006 is position 17 and 2016 is position 26
+#' cd <- pvts(x=img_pv, startm=17, endm=26, threshold=5) # PV series
 #' plot(cd)
 #'
 pvts<- function(x, startm, endm, threshold=5, img, tr, time=FALSE, vf=FALSE) {
@@ -89,7 +87,7 @@ pvts<- function(x, startm, endm, threshold=5, img, tr, time=FALSE, vf=FALSE) {
         x1<-c(p - 1/2, p - 1/2, p + 1/2, p + 1/2)
         y1<-c(-0.1,1.5,1.5,-0.1); polygon(x1,y1,col=adjustcolor("slateblue1",alpha.f=0.4),border=NA)
         text(n, li-0.05, "Lower limit", col="red", cex = 1.3)
-        grid(); legend(m, 0.6, c("Variable","Lower limit","Breakpoint"),inset=.02, cex = 0.9,lty=c(1,2,1),
+        grid(); legend(m, 0.6, c("Variable","Lower limit","Breakpoint detected"),inset=.02, cex = 0.9,lty=c(1,2,1),
                        lwd=c(2,2,5), col=c("black","red", "slateblue1"),bty="n")
       }
       breakR <- plot.pvts(x, endm)
@@ -112,7 +110,7 @@ pvts<- function(x, startm, endm, threshold=5, img, tr, time=FALSE, vf=FALSE) {
 
     # Photosynthetic vegetation?
     if (vf) {
-      breakR[img<80 | img<0.8 | img<8000]<- 0
+      breakR[img<50 | img<0.5 | img<5000]<- 0
     }
 
   } else if (is(x,'RasterStack') | is(x,'RasterBrick')) {
@@ -133,7 +131,7 @@ pvts<- function(x, startm, endm, threshold=5, img, tr, time=FALSE, vf=FALSE) {
 
     # Photosynthetic vegetation?
     if (vf) {
-      breakR[img<80 | img<0.8 | img<8000]<- 0
+      breakR[img<50 | img<0.5 | img<5000]<- 0
     }
 
   } else {

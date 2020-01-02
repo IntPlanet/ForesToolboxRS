@@ -28,18 +28,18 @@
 #' library(raster)
 #' library(dplyr)
 #'
-#'Load an example dataset
-#'data(fdata)
+#' Load an example dataset
+#' data(FTdata)
 #'
-#'#Endmembers
-#'soil<-c(0.8980,0.8508,0.8704,1.3636,1.6579,1.1420)
-#'forest<-c(0.8207,0.7545,0.6548,1.6463,0.9725,0.6673)
-#'water<-c(0.9276,0.9570,1.0089,0.6743,0.5220,0.5143)
-#'endm <- matrix(c(soil,forest,water), 3, 6, byrow = TRUE, dimnames =
-#'list(c("soil", "forest","water"), c("B1", "B2", "B3","B4","B5","B6")))
+#' Endmembers (Surface reflectance between 0 and 10000)
+#' soil<-c(8980,8508,8704,13636,16579,11420)
+#' forest<-c(8207,7545,6548,16463,9725,6673)
+#' water<-c(9276,9570,10089,6743,5220,5143)
+#' endm <- matrix(c(soil,forest,water), 3, 6, byrow = TRUE, dimnames =
+#' list(c("soil", "forest","water"), c("B1", "B2", "B3","B4","B5","B6")))
 #'
-#'#Unmix the image
-#'fractions <- sma(img_ndfi, endm)
+#' Unmix the image
+#' fractions <- sma(img, endm)
 sma <- function(img, endm){
 
   if (is(img, "RasterStack") | is(img, "RasterBrick")) {

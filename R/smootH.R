@@ -27,6 +27,7 @@
 #' @examples
 #' library(ForesToolboxRS)
 #' library(stars)
+#' library(forecast)
 #'
 #' # Example 1
 #' x <- c(80,78,75,76,79,-100,82,76,81,77,76)
