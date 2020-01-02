@@ -24,6 +24,7 @@
 #' library(ForesToolboxRS)
 #' library(raster)
 #' library(dplyr)
+#'
 #' Load an example dataset
 #' data(FTdata)
 #'
