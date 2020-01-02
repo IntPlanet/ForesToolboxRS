@@ -9,20 +9,50 @@
 \alias{MosaicFreeCloud.stars}
 \title{Get the best Available Pixel on an Image Collection}
 \usage{
-MosaicFreeCloud(img, time, CLUSTER = NULL, fit_negative = TRUE,
-  RasterLayer = TRUE, ...)
+MosaicFreeCloud(
+  img,
+  time,
+  CLUSTER = NULL,
+  fit_negative = TRUE,
+  RasterLayer = TRUE,
+  ...
+)
 
-\method{MosaicFreeCloud}{character}(img, time, CLUSTER = NULL,
-  fit_negative = TRUE, RasterLayer = TRUE, ...)
+\method{MosaicFreeCloud}{character}(
+  img,
+  time,
+  CLUSTER = NULL,
+  fit_negative = TRUE,
+  RasterLayer = TRUE,
+  ...
+)
 
-\method{MosaicFreeCloud}{RasterStack}(img, time, CLUSTER = NULL,
-  fit_negative = TRUE, RasterLayer = TRUE, ...)
+\method{MosaicFreeCloud}{RasterStack}(
+  img,
+  time,
+  CLUSTER = NULL,
+  fit_negative = TRUE,
+  RasterLayer = TRUE,
+  ...
+)
 
-\method{MosaicFreeCloud}{RasterBrick}(img, time, CLUSTER = NULL,
-  fit_negative = TRUE, RasterLayer = TRUE, ...)
+\method{MosaicFreeCloud}{RasterBrick}(
+  img,
+  time,
+  CLUSTER = NULL,
+  fit_negative = TRUE,
+  RasterLayer = TRUE,
+  ...
+)
 
-\method{MosaicFreeCloud}{stars}(img, time, CLUSTER = NULL,
-  fit_negative = TRUE, RasterLayer = TRUE, ...)
+\method{MosaicFreeCloud}{stars}(
+  img,
+  time,
+  CLUSTER = NULL,
+  fit_negative = TRUE,
+  RasterLayer = TRUE,
+  ...
+)
 }
 \arguments{
 \item{img}{Character vector, RasterStack, RasterBrick or 3D/4D star object.}

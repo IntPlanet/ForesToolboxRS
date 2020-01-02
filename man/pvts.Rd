@@ -4,8 +4,7 @@
 \alias{pvts}
 \title{Change detection using the PVts-\eqn{\beta} approach}
 \usage{
-pvts(x, startm, endm, threshold = 5, img, tr, time = FALSE,
-  vf = FALSE)
+pvts(x, startm, endm, threshold = 5, img, tr, time = FALSE, vf = FALSE)
 }
 \arguments{
 \item{x}{Vector, Matrix, RasterStack, RasterBrick}
@@ -39,7 +38,7 @@ Change detection using the PVts-\eqn{\beta} approach
 
 Tarazona, Y., Mantas, V.M., Pereira, A.J.S.C. (2018). Improving tropical
 deforestation detection through using photosynthetic vegetation time
-series – (PVts-\eqn{\beta}). Ecological Indicators, 94, 367 379.
+series (PVts-\eqn{\beta}). Ecological Indicators, 94, 367 379.
 }
 
 \section{Note}{
@@ -63,12 +62,10 @@ vec <- c(0.86,0.93,0.97,0.91,0.95,0.96,0.91,0.88,0.92,0.89,0.90,0.89,0.91,0.92,0
 cd <- pvts(x=vec, startm=19, endm=19, threshold= 5)
 
 # Example 2.
-imgs <- system.file("PVts",package = "ForesToolboxRS") \%>\%
-  list.files(full.names = TRUE) \%>\%
-  stack()
+data(FTdata)
 
-# Change monitoring period 2006-2016. Where 2006 is position 7 and 2016 is position 16
-cd <- pvts(x=imgs, startm=7, endm=16, threshold=3) # EVI indices
+# Change monitoring period 2006-2016. Where 2006 is position 17 and 2016 is position 26
+cd <- pvts(x=img_pv, startm=17, endm=26, threshold=5) # PV series
 plot(cd)
 
 }

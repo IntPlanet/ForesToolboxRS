@@ -16,11 +16,9 @@ smootH(x, interp = "na.interp", CLUSTER = NULL, ...)
 
 \method{smootH}{matrix}(x, interp = "na.interp", CLUSTER = NULL, ...)
 
-\method{smootH}{RasterStack}(x, interp = "na.interp", CLUSTER = NULL,
-  ...)
+\method{smootH}{RasterStack}(x, interp = "na.interp", CLUSTER = NULL, ...)
 
-\method{smootH}{RasterBrick}(x, interp = "na.interp", CLUSTER = NULL,
-  ...)
+\method{smootH}{RasterBrick}(x, interp = "na.interp", CLUSTER = NULL, ...)
 
 \method{smootH}{stars}(x, interp = "na.interp", CLUSTER = NULL, ...)
 }
@@ -53,6 +51,7 @@ series (PVts). Ecological Indicators, 94, 367 379.
 \examples{
 library(ForesToolboxRS)
 library(stars)
+library(forecast)
 
 # Example 1
 x <- c(80,78,75,76,79,-100,82,76,81,77,76)

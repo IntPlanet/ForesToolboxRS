@@ -35,15 +35,10 @@ library(ForesToolboxRS)
 library(raster)
 library(factoextra)
 
-# Optical images
-b1 <- raster(ncol = 100, nrow=100, val = sample(1:2e+15, 10000))
-b2 <- raster(ncol = 100, nrow=100, val = sample(1:2e+15, 10000))
-optical <- stack(b1,b2)
-# Radar images
-vv <- raster(ncol = 100, nrow=100, val = sample(1:2e+15, 10000))
-vh <- raster(ncol = 100, nrow=100, val = sample(1:2e+15, 10000))
-radar <- stack(vv,vh)
-# Fusion
+Load an example dataset
+data(FTdata)
+
+# Fusing optical and radar data
 fusion <- fusionRS(x=optical, y=radar)
 #plotRGB(fusion[[1]], 1,2,3, axes=F, stretch="lin",main ="Fused images")
 
