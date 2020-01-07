@@ -19,13 +19,13 @@
 #' minimize the squared error between the actual spectrum and the estimated spectrum.
 #' The values of the fractions will be between 0 and 1.
 #' @param img Optical images. It could be RasterStack or RasterBrick.
-#' @param endm Endmembers must be a matrix or data.frame and with more than one edmember.
+#' @param endm Endmembers must be a matrix or data.frame and with more than one endmember.
 #' Rows represent the endmembers and columns represent the spectral bands.  The number
 #' of bands must be greater than the number of endmembers.
 #' @importFrom dplyr bind_cols
 #' @export
 #' @examples
-#' \dontrun{
+#'
 #' library(ForesToolboxRS)
 #' library(raster)
 #' library(dplyr)

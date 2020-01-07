@@ -16,9 +16,8 @@
 #' @param img Imagen Landsat TM, ETM+ o OLI. It could be RasterStack or RasterBrick.
 #' @param procesLevel Processing level. It is possible to obtain the NDFI from images
 #' in surface reflectance (SR) from TM, ETM+ and OLI, or Top of Atmosphere (TOA) values
-#' only for Lansat 8 OLI. The default is SR. In addition, for any processing level,
-#' the image values must be rescaled between
-#' 0 and 10000.
+#' only for Landsat 8 OLI. The default is SR. In addition, for any processing level,
+#' the image values must be rescaled between 0 and 10000.
 #' @export
 #' @examples
 #' library(ForesToolboxRS)
@@ -109,7 +108,7 @@ ndfiSMA <- function(img, procesLevel="SR"){
     # NDFI
     ndfi_index <- (gvs-npvSoil)/(gvs+npvSoil)*100 + 100
 
-  } else if (interp=="TOA") {
+  } else if (procesLevel=="TOA") {
     # Endmembers
     endm <- matrix(c(924.6,  933.1,  455.8,  6418.3, 2445.8, 701.6,
                      2319.6, 2055.1, 1707.8, 3221.3, 7753.8, 2001.6,

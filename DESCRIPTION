@@ -19,7 +19,7 @@ Description: Remote sensing tools for forest monitoring includes a series of
 License: MIT + file LICENSE
 Encoding: UTF-8
 LazyData: true
-RoxygenNote: 6.1.1.9000
+RoxygenNote: 7.0.2
 Depends:
     R (>= 3.3.0),
     stars
@@ -27,6 +27,7 @@ Imports:
     methods,
     forecast,
     parallel,
+    dplyr,
     raster,
     rgdal,
     Rcpp,

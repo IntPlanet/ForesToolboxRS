@@ -16,6 +16,8 @@
 #' @importFrom factoextra get_pca_var
 #' @param x Optical image. It could be RasterStack or RasterBrick
 #' @param y Radar image. It could be RasterStack or RasterBrick
+#' @param sv Logical. If TRUE, the PCA is calculated using the correlation
+#' matrix (standardized variables) instead of the convariance matrix (non-standardized variables).
 #' @param na If TRUE the NA values of the images will be omitted from the analysis.
 #' @examples
 #' library(ForesToolboxRS)
@@ -30,7 +32,7 @@
 #' #plotRGB(fusion[[1]], 1,2,3, axes=F, stretch="lin",main ="Fused images")
 #'
 #' @export
-fusionRS <- function(x, y, na = FALSE) {
+fusionRS <- function(x, y, sv=TRUE, na = FALSE) {
 
   if (is(x,'stars')) {
     x <- brick(mapply(function(z) as(x[z],'Raster'),seq_len(length(x))))
@@ -54,7 +56,13 @@ fusionRS <- function(x, y, na = FALSE) {
     df <- na.omit(df)
   }
 
-  acp <- prcomp(df, center = TRUE, scale = TRUE) # standardized variables
+  # standardized variables?
+  if (sv) {
+    acp <- prcomp(df, center = TRUE, scale = TRUE) # standardized variables
+  } else {
+    acp <- prcomp(df, center = FALSE, scale = FALSE) # non-standardized variables
+  }
+
   var <- summary(acp)$importance[1, ]^2 # Variance
   pov <- summary(acp)$importance[2, ] # Proportion of variance
   varAcum <- summary(acp)$importance[3, ] # Cumulative variance
