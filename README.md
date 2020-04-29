@@ -28,9 +28,12 @@ Before running **ForesToolboxRS**, we need to intall the **devtools** package.
 ## Some functions
 Before using the functions, is it necessary to load the **ForesToolboxRS** package with *library()*. Here some available functions. 
 
-    library(ForesToolboxRS)
-    ?MosaicFreeCloud
-    ?smootH
+    suppressMessages(library(ForesToolboxRS))
+    ?smootH 
     ?pvts
     ?fusionRS
+    ?sma
+    ?ndfiSMA
+
+
 
