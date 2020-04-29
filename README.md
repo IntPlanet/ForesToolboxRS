@@ -20,14 +20,17 @@ The development of this package was funded by [American Program in GIS and Remot
 # Getting Started
 
 ## Install
+Before running **ForesToolboxRS**, we need to intall the **devtools** package.
 
     library(devtools)
     install_github("ytarazona/ForesToolboxRS")
 
 ## Some functions
+Before using the functions, is it necessary to load the **ForesToolboxRS** package with *library()*. Here some available functions. 
 
     library(ForesToolboxRS)
     ?MosaicFreeCloud
     ?smootH
     ?pvts
     ?fusionRS
+
