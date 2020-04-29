@@ -13,6 +13,10 @@ coverage](https://codecov.io/gh/csaybar/ForesToolboxRS/branch/master/graph/badge
 
 ForesToolboxRS is a R package that was created to provide a variety of tools and algorithms for processing and analyzing Remote Sensing for Earth Observations, especially for monitoring forest disturbance. All implemented algorithms are based on scientific publications of the highest level. The PVts-β approach, a non-seasonal detection method, is implemented in this package and is capable of reading matrix and raster data. ForesToolboxRs is an initiative whose functions are inspired by the work of [Tarazona, Y., Mantas, V.M., Pereira, A.J.S.C. (2018). Improving tropical deforestation detection through using photosynthetic vegetation time series – (PVts-β). Ecological Indicators, 94, 367–379.](https://doi.org/10.1016/j.ecolind.2018.07.012)
 
+# Funding
+
+El desarrollo de este paquete fue financiado por [American Program in GIS and Remote Sensing](https://www.apgis-rs.com/).
+
 # Getting Started
 
 ## Install
