@@ -35,5 +35,3 @@ Before using the functions, is it necessary to load the **ForesToolboxRS** packa
     ?sma
     ?ndfiSMA
 ## Tutorials
-- sdfsdf
-- sdsf
