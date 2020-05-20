@@ -24,12 +24,12 @@
 #' library(raster)
 #' library(factoextra)
 #'
-#' Load an example dataset
+#' # Load an example dataset
 #' data(FTdata)
 #'
 #' # Fusing optical and radar data
 #' fusion <- fusionRS(x=optical, y=radar)
-#' #plotRGB(fusion[[1]], 1,2,3, axes=F, stretch="lin",main ="Fused images")
+#' plotRGB(fusion[[1]], 1,2,3, axes=F, stretch="lin",main ="Fused images")
 #'
 #' @export
 fusionRS <- function(x, y, sv=TRUE, na = FALSE) {

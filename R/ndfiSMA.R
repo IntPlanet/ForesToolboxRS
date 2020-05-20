@@ -13,7 +13,7 @@
 #' @section Note:
 #' The fractions will be obtained from the Spectral Mixture Analysis physical model
 #' that was implemented in this function.
-#' @param img Imagen Landsat TM, ETM+ o OLI. It could be RasterStack or RasterBrick.
+#' @param img It could be RasterStack or RasterBrick.
 #' @param procesLevel Processing level. It is possible to obtain the NDFI from images
 #' in surface reflectance (SR) from TM, ETM+ and OLI, or Top of Atmosphere (TOA) values
 #' only for Landsat 8 OLI. The default is SR. In addition, for any processing level,
@@ -24,10 +24,10 @@
 #' library(raster)
 #' library(dplyr)
 #'
-#' Load an example dataset
+#' # Load an example dataset
 #' data(FTdata)
 #'
-#' Endmembers
+#' # Endmembers
 #' gv<-c(119.0,  475.0,  169.0,  6250.0, 2399.0, 675.0)
 #' npv<-c(1514.0, 1597.0, 1421.0, 3053.0, 7707.0, 1975.0)
 #' soil<-c(1799.0, 2479.0, 3158.0, 5437.0, 7707.0, 6646.0)
@@ -35,7 +35,7 @@
 #' endm <- matrix(c(gv,npv,soil,cloud), 4, 6, byrow = TRUE, dimnames =
 #' list(c("gv", "npv","soil","cloud"), c("B1", "B2", "B3","B4","B5","B6")))
 #'
-#' Unmix the image
+#' # Unmix the image
 #' ndfi <- ndfiSMA(img, procesLevel="SR")
 ndfiSMA <- function(img, procesLevel="SR"){
 
