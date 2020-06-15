@@ -9,7 +9,7 @@ sma(img, endm)
 \arguments{
 \item{img}{Optical images. It could be RasterStack or RasterBrick.}
 
-\item{endm}{Endmembers must be a matrix or data.frame and with more than one edmember.
+\item{endm}{Endmembers must be a matrix or data.frame and with more than one endmember.
 Rows represent the endmembers and columns represent the spectral bands.  The number
 of bands must be greater than the number of endmembers.}
 }
@@ -38,3 +38,22 @@ minimize the squared error between the actual spectrum and the estimated spectru
 The values of the fractions will be between 0 and 1.
 }
 
+\examples{
+
+library(ForesToolboxRS)
+library(raster)
+library(dplyr)
+
+# Load an example dataset
+data(FTdata)
+
+# Endmembers (Surface reflectance between 0 and 10000)
+soil<-c(8980,8508,8704,13636,16579,11420)
+forest<-c(8207,7545,6548,16463,9725,6673)
+water<-c(9276,9570,10089,6743,5220,5143)
+endm <- matrix(c(soil,forest,water), 3, 6, byrow = TRUE, dimnames =
+list(c("soil", "forest","water"), c("B1", "B2", "B3","B4","B5","B6")))
+
+# Unmix the image
+fractions <- sma(img, endm)
+}

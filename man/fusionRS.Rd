@@ -4,12 +4,15 @@
 \alias{fusionRS}
 \title{Fusion of images with different observation geometry.}
 \usage{
-fusionRS(x, y, na = FALSE)
+fusionRS(x, y, sv = TRUE, na = FALSE)
 }
 \arguments{
 \item{x}{Optical image. It could be RasterStack or RasterBrick}
 
 \item{y}{Radar image. It could be RasterStack or RasterBrick}
+
+\item{sv}{Logical. If TRUE, the PCA is calculated using the correlation
+matrix (standardized variables) instead of the convariance matrix (non-standardized variables).}
 
 \item{na}{If TRUE the NA values of the images will be omitted from the analysis.}
 }
@@ -19,11 +22,6 @@ This algorithm allows to fusion images coming from different spectral sensors
 of this function, it is possible to obtain the contribution (%) of each variable
 in the fused image.
 }
-\section{References}{
-
-Tarazona et al...
-}
-
 \section{Note}{
 
 Before executing the function, it is recommended that images coming from different
@@ -35,11 +33,11 @@ library(ForesToolboxRS)
 library(raster)
 library(factoextra)
 
-Load an example dataset
+# Load an example dataset
 data(FTdata)
 
 # Fusing optical and radar data
 fusion <- fusionRS(x=optical, y=radar)
-#plotRGB(fusion[[1]], 1,2,3, axes=F, stretch="lin",main ="Fused images")
+plotRGB(fusion[[1]], 1,2,3, axes=F, stretch="lin",main ="Fused images")
 
 }
