@@ -105,6 +105,7 @@ ndfiSMA <- function(img, procesLevel="SR"){
 
     # npv + soil + cloud
     npvSoil <- npv+soil+cloud
+
     # NDFI
     ndfi_index <- (gvs-npvSoil)/(gvs+npvSoil)*100 + 100
 
@@ -168,6 +169,7 @@ ndfiSMA <- function(img, procesLevel="SR"){
 
     # npv + soil + cloud
     npvSoil <- npv+soil+cloud
+
     # NDFI
     ndfi_index <- (gvs-npvSoil)/(gvs+npvSoil)*100 + 100
 

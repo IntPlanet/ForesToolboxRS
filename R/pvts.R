@@ -17,20 +17,21 @@
 #' @section Note:
 #' In order to optimise the detections, it is advisable to make a smoothing
 #' through the \link[ForesToolboxRS]{smootH} function before detecting changes. The smoothing will
-#' allow to eliminate outliers that were not eliminated during the masking
+#' allow to eliminate outliers that were not eliminated during the masking. In addition,
+#' in case the input is a matrix, the first dimension must be rows*columns of the image,
+#' and the second dimension the number of images.
 #' of atmospheric artifacts.
-#' @importFrom stats sd time ts
-#' @importFrom graphics points abline polygon text grid legend plot
-#' @importFrom grDevices adjustcolor
-#' @importFrom raster values<- as.matrix
-#' @param x Vector, Matrix, RasterStack, RasterBrick
-#' @param startm The start of the monitoring time
-#' @param endm The end of the monitoring time
+#' @importFrom stats sd time ts.
+#' @importFrom graphics points abline polygon text grid legend plot.
+#' @importFrom grDevices adjustcolor.
+#' @importFrom raster values <- as.matrix.
+#' @param x Vector, Matrix, RasterStack, RasterBrick.
+#' @param startm The start of the monitoring time.
+#' @param endm The end of the monitoring time.
 #' @param threshold The default threshold is 5 for photosynthetic vegetation,
 #' while for indices such as NDVI and EVI the threshold is 3.
 #' Please see Tarazona et al. (2018) for more details.
-#' @param sm If it is TRUE, a smoothing proposed by hamunyela will be applied
-#' (in case "x" is a vector).
+#' @param sm If it is TRUE, a smoothing proposed by hamunyela will be applied.
 #' @param tr The vector of the analysis time range must contain the start time of the
 #' time series, the end time and the frequency of the series (in case "x" is a vector).
 #' For example: tr <- c(1990, 2017, 1) (i.e., the time series starts in 1990, ends in 2017 and
@@ -73,7 +74,7 @@ pvts<- function(x, startm, endm, threshold=5, tr, img, sm=FALSE, time=FALSE, vf=
     x[sum(is.na(x)) >= (length(x)-1)] <- 100
     x <- na.interp(x)
 
-    # We smooth the data
+    # Let's smooth the data
     if (sm){
       for(i in 2:(startm-1)){
         if(((x[i]-x[i-1])< -0.01*x[i-1]) & ((x[i]-x[i+1])< -0.01*x[i+1])){
@@ -137,6 +138,16 @@ pvts<- function(x, startm, endm, threshold=5, tr, img, sm=FALSE, time=FALSE, vf=
       x[i,] <- na.interp(x[i,])
     }
 
+    # Let's smooth the data
+    if (sm){
+      for(i in 1:dim(x)[1]){
+        for(j in 2:(startm-1)){
+          x[i,][j]<-ifelse(((x[i,][j]-x[i,][j-1])< -0.01*x[i,][j-1]) & ((x[i,][j]-x[i,][j+1])< -0.01*x[i,][j+1]),
+                           (x[i,][j-1]+x[i,][j+1])/2,x[i,][j])
+        }
+      }
+    }
+
     mean<-apply(x[,1:(startm-1)], 1, mean)
     std<-apply(x[,1:(startm-1)], 1, sd)
     cd<- ifelse(x[,endm] < (mean-threshold*std), 1, 0)
@@ -156,6 +167,16 @@ pvts<- function(x, startm, endm, threshold=5, tr, img, sm=FALSE, time=FALSE, vf=
       x[i,][x[i,] == 0 | x[i,] == -1]<- NA
       x[i,][summary(x[i,])[7] >= (dim(x)[2]-1)] <- 100
       x[i,] <- na.interp(x[i,])
+    }
+
+    # Let's smooth the data
+    if (sm){
+      for(i in 1:dim(x)[1]){
+        for(j in 2:(startm-1)){
+          x[i,][j]<-ifelse(((x[i,][j]-x[i,][j-1])< -0.01*x[i,][j-1]) & ((x[i,][j]-x[i,][j+1])< -0.01*x[i,][j+1]),
+                           (x[i,][j-1]+x[i,][j+1])/2,x[i,][j])
+        }
+      }
     }
 
     mean<-apply(x[,1:startm-1], 1, mean)

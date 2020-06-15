@@ -30,7 +30,7 @@
 #' Sentinel2MSI       -> 1,2,3,4,8,11,12 (coastal,blue,green,red,nir-1,mir-1,mir-2)
 #'
 #' @param img It could be RasterStack or RasterBrick.
-#' @param sat Especificar el tipo de satélite y sensor (Landsat5TM, Landsat7ETM
+#' @param sat Specify satellite and sensor type (Landsat5TM, Landsat7ETM
 #' or Landsat8OLI).
 #'
 #' @export
@@ -82,7 +82,7 @@ tct <- function(x=img, sat="Landsat8OLI"){
                       0.1825,  0.1763,  0.1615,  0.0486, -0.0755,-0.7701, -0.5293),3, 7,
                       byrow = TRUE, dimnames =list(c("Brightness","Greenness","Wetness"),
                                                 c("B1","B2","B3","B4","B8","B11","B12")))
-  } else stop("Satellite not supported")
+  } else stop("Satellite not supported.")
 
   val <- as.matrix(x)%*%t(coefc)
 

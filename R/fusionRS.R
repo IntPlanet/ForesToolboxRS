@@ -5,9 +5,6 @@
 #' of this function, it is possible to obtain the contribution (%) of each variable
 #' in the fused image.
 #'
-#' @section References:
-#' Tarazona et al...
-#'
 #' @section Note:
 #' Before executing the function, it is recommended that images coming from different
 #' sensors or from the same sensor have a co-registration.
