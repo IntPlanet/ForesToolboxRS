@@ -1,7 +1,7 @@
 Package: ForesToolboxRS
+Version: 0.1.0
 Type: Package
 Title: Remote Sensing Tools for Forest Monitoring
-Version: 0.1.0
 Authors@R: 
     c(person(given = "Yonatan",
              family = "Tarazona Coronel",
@@ -42,9 +42,10 @@ LazyData: true
 RoxygenNote: 7.0.2
 Depends:
     R (>= 3.3.0),
-    stars
+    raster,
 Imports:
     methods,
+    stats,
     forecast,
     parallel,
     dplyr,
@@ -55,9 +56,13 @@ Imports:
     zoo,
     factoextra,
     FactoMineR,
+    graphics,
+    grDevices,
+    stars
 Suggests: 
-    testthat,
+    testthat (>= 2.1.0),
     rmarkdown,
-    covr
+    covr,
+    roxygen2
 LinkingTo:
     Rcpp
