@@ -1,5 +1,5 @@
+library(testthat)
 library(ForesToolboxRS)
 library(stars)
 library(raster)
-context("ForesToolboxRS fusionRS")
-
+context("ForesToolboxRS tct")

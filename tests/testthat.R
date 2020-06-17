@@ -1,8 +1,6 @@
 library(testthat)
 library(ForesToolboxRS)
-library(stars)
 library(raster)
-library(forecast)
+library(stars)
 
 test_check("ForesToolboxRS")
-
