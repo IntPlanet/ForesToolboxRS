@@ -3,6 +3,7 @@
 #' A three-step algorithm for creating a mosaic from satellite imagery (see notes).
 #'
 #' @name mosaic-free-cloud
+#'
 #' @section Note:
 #' The three steps are: \cr
 #' \itemize{
@@ -10,6 +11,7 @@
 #'    \item Calculate the time gap between the image selected in step one to the remaining images.
 #'    \item Take the clean pixels  considering the shortest time gap and ending with the image most temporally distant.
 #' }
+#'
 #' @section References:
 #' Tarazona, Y., Mantas, V.M., Pereira, A.J.S.C. (2018). Improving tropical
 #' deforestation detection through using photosynthetic vegetation time
@@ -21,11 +23,13 @@
 #' @param fit_negative logical; if \code{TRUE}, negative values are replace by NA.
 #' @param RasterLayer logical; if \code{TRUE}, return a RasterLayer object.
 #' @param ... Passed on to \link[stars]{read_stars} parameters.
+#'
 #' @importFrom methods as
 #' @importFrom stats na.omit
 #' @importFrom raster merge
-#' @importFrom stars st_apply
+#' @importFrom stars st_apply st_as_stars
 #' @export
+#'
 #' @examples
 #' library(ForesToolboxRS)
 #' library(raster)

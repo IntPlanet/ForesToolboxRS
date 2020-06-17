@@ -13,22 +13,25 @@
 #' Shimabukuro, Y.E. and Smith, J., (1991). The least squares mixing models to
 #' generate fraction images derived from remote sensing multispectral data.
 #' IEEE Transactions on Geoscience and Remote Sensing, 29, pp. 16-21.
+#'
 #' @section Note:
 #' A regression analysis is used to obtain the fractions. In least squares
 #' inversion algorithms, the common objective is to estimate abundances that
 #' minimize the squared error between the actual spectrum and the estimated spectrum.
 #' The values of the fractions will be between 0 and 1.
+#'
 #' @param img Optical images. It could be RasterStack or RasterBrick.
 #' @param endm Endmembers must be a matrix or data.frame and with more than one endmember.
 #' Rows represent the endmembers and columns represent the spectral bands.  The number
 #' of bands must be greater than the number of endmembers.
+#'
 #' @importFrom dplyr bind_cols
 #' @export
+#'
 #' @examples
 #'
 #' library(ForesToolboxRS)
 #' library(raster)
-#' library(dplyr)
 #'
 #' # Load an example dataset
 #' data(FTdata)

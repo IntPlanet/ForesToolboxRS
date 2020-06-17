@@ -32,8 +32,8 @@
 #' @param img It could be RasterStack or RasterBrick.
 #' @param sat Specify satellite and sensor type (Landsat5TM, Landsat7ETM
 #' or Landsat8OLI).
-#'
 #' @export
+#'
 #' @examples
 #' library(ForesToolboxRS)
 #' library(raster)

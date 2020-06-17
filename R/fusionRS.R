@@ -1,4 +1,4 @@
-#' Fusion of images with different observation geometry.
+#' Fusion of images with different observation geometry
 #'
 #' This algorithm allows to fusion images coming from different spectral sensors
 #' (e.g., optical-optical, optical and SAR or SAR-SAR). Among many of the qualities
@@ -8,18 +8,20 @@
 #' @section Note:
 #' Before executing the function, it is recommended that images coming from different
 #' sensors or from the same sensor have a co-registration.
+#'
 #' @importFrom stats prcomp na.omit
 #' @importFrom raster getValues as.data.frame brick extent plotRGB
 #' @importFrom factoextra get_pca_var
+#'
 #' @param x Optical image. It could be RasterStack or RasterBrick
 #' @param y Radar image. It could be RasterStack or RasterBrick
-#' @param sv Logical. If TRUE, the PCA is calculated using the correlation
+#' @param sv Logical. If \code{TRUE}, the PCA is calculated using the correlation
 #' matrix (standardized variables) instead of the convariance matrix (non-standardized variables).
-#' @param na If TRUE the NA values of the images will be omitted from the analysis.
+#' @param na If \code{TRUE} the NA values of the images will be omitted from the analysis.
+#'
 #' @examples
 #' library(ForesToolboxRS)
 #' library(raster)
-#' library(factoextra)
 #'
 #' # Load an example dataset
 #' data(FTdata)

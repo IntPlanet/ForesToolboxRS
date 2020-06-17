@@ -10,19 +10,22 @@
 #' Souza Jr., C.M., Roberts, D.A., Cochrane, M.A., 2005. Combining spectral and
 #' spatialinformation to map canopy damage from selective logging and forest
 #' fires. Remote Sens. Environ. 98 (2-3), 329-343.
+#'
 #' @section Note:
 #' The fractions will be obtained from the Spectral Mixture Analysis physical model
 #' that was implemented in this function.
+#'
 #' @param img It could be RasterStack or RasterBrick.
 #' @param procesLevel Processing level. It is possible to obtain the NDFI from images
 #' in surface reflectance (SR) from TM, ETM+ and OLI, or Top of Atmosphere (TOA) values
 #' only for Landsat 8 OLI. The default is SR. In addition, for any processing level,
 #' the image values must be rescaled between 0 and 10000.
+#'
 #' @export
+#'
 #' @examples
 #' library(ForesToolboxRS)
 #' library(raster)
-#' library(dplyr)
 #'
 #' # Load an example dataset
 #' data(FTdata)

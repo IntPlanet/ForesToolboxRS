@@ -14,38 +14,41 @@
 #' Hamunyela, E., Verbesselt, J., Roerink, G., & Herold, M. (2013).
 #' Trends in spring phenology of western European deciduous forests.
 #' Remote Sensing,5(12), 6159-6179.
+#'
 #' @section Note:
 #' In order to optimise the detections, it is advisable to make a smoothing
 #' through the \link[ForesToolboxRS]{smootH} function before detecting changes. The smoothing will
 #' allow to eliminate outliers that were not eliminated during the masking. In addition,
 #' in case the input is a matrix, the first dimension must be rows*columns of the image,
 #' and the second dimension the number of images.
-#' of atmospheric artifacts.
-#' @importFrom stats sd time ts.
-#' @importFrom graphics points abline polygon text grid legend plot.
-#' @importFrom grDevices adjustcolor.
-#' @importFrom raster values <- as.matrix.
+#'
+#' @importFrom stats sd time ts
+#' @importFrom graphics points abline polygon text grid legend plot
+#' @importFrom grDevices adjustcolor
+#' @importFrom raster values
+#' @importFrom forecast na.interp
+#'
 #' @param x Vector, Matrix, RasterStack, RasterBrick.
 #' @param startm The start of the monitoring time.
 #' @param endm The end of the monitoring time.
 #' @param threshold The default threshold is 5 for photosynthetic vegetation,
 #' while for indices such as NDVI and EVI the threshold is 3.
 #' Please see Tarazona et al. (2018) for more details.
-#' @param sm If it is TRUE, a smoothing proposed by hamunyela will be applied.
+#' @param sm If it is \code{TRUE}, a smoothing proposed by hamunyela will be applied.
 #' @param tr The vector of the analysis time range must contain the start time of the
 #' time series, the end time and the frequency of the series (in case "x" is a vector).
 #' For example: tr <- c(1990, 2017, 1) (i.e., the time series starts in 1990, ends in 2017 and
 #' has an annual frequency of 1). See \link[stats]{ts} for more details.
 #' @param img The image of the position immediately before the monitoring start,
 #' i.e. the "start-1" position (in case "x" is a matrix).
-#' @param time If it is TRUE the plotting will be with time coordinates
+#' @param time If it is \code{TRUE} the plotting will be with time coordinates
 #' (only if the "tr" parameter is within the function).
 #' @param vf If the monitoring is with Photosynthetic Vegetation series,
-#' then switch to TRUE (in case "x" is a matrix or a RasterStack).
+#' then switch to \code{TRUE} (in case "x" is a matrix or a RasterStack).
 #' @export
+#'
 #' @examples
 #' library(ForesToolboxRS)
-#' library(forecast)
 #' library(raster)
 #'
 #' # Example 1.
