@@ -35,13 +35,13 @@ has an annual frequency of 1). See \link[stats]{ts} for more details.}
 \item{img}{The image of the position immediately before the monitoring start,
 i.e. the "start-1" position (in case "x" is a matrix).}
 
-\item{sm}{If it is TRUE, a smoothing proposed by hamunyela will be applied.}
+\item{sm}{If it is \code{TRUE}, a smoothing proposed by hamunyela will be applied.}
 
-\item{time}{If it is TRUE the plotting will be with time coordinates
+\item{time}{If it is \code{TRUE} the plotting will be with time coordinates
 (only if the "tr" parameter is within the function).}
 
 \item{vf}{If the monitoring is with Photosynthetic Vegetation series,
-then switch to TRUE (in case "x" is a matrix or a RasterStack).}
+then switch to \code{TRUE} (in case "x" is a matrix or a RasterStack).}
 }
 \description{
 This algorithm will allow to detect disturbances in the forests using
@@ -66,12 +66,10 @@ through the \link[ForesToolboxRS]{smootH} function before detecting changes. The
 allow to eliminate outliers that were not eliminated during the masking. In addition,
 in case the input is a matrix, the first dimension must be rows*columns of the image,
 and the second dimension the number of images.
-of atmospheric artifacts.
 }
 
 \examples{
 library(ForesToolboxRS)
-library(forecast)
 library(raster)
 
 # Example 1.

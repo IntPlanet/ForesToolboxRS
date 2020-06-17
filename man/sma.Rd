@@ -42,7 +42,6 @@ The values of the fractions will be between 0 and 1.
 
 library(ForesToolboxRS)
 library(raster)
-library(dplyr)
 
 # Load an example dataset
 data(FTdata)

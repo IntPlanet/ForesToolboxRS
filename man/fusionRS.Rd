@@ -2,7 +2,7 @@
 % Please edit documentation in R/fusionRS.R
 \name{fusionRS}
 \alias{fusionRS}
-\title{Fusion of images with different observation geometry.}
+\title{Fusion of images with different observation geometry}
 \usage{
 fusionRS(x, y, sv = TRUE, na = FALSE)
 }
@@ -11,10 +11,10 @@ fusionRS(x, y, sv = TRUE, na = FALSE)
 
 \item{y}{Radar image. It could be RasterStack or RasterBrick}
 
-\item{sv}{Logical. If TRUE, the PCA is calculated using the correlation
+\item{sv}{Logical. If \code{TRUE}, the PCA is calculated using the correlation
 matrix (standardized variables) instead of the convariance matrix (non-standardized variables).}
 
-\item{na}{If TRUE the NA values of the images will be omitted from the analysis.}
+\item{na}{If \code{TRUE} the NA values of the images will be omitted from the analysis.}
 }
 \description{
 This algorithm allows to fusion images coming from different spectral sensors
@@ -31,7 +31,6 @@ sensors or from the same sensor have a co-registration.
 \examples{
 library(ForesToolboxRS)
 library(raster)
-library(factoextra)
 
 # Load an example dataset
 data(FTdata)

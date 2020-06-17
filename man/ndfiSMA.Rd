@@ -37,7 +37,6 @@ that was implemented in this function.
 \examples{
 library(ForesToolboxRS)
 library(raster)
-library(dplyr)
 
 # Load an example dataset
 data(FTdata)

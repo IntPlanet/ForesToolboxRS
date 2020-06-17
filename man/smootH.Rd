@@ -9,9 +9,8 @@ smootH(x, interp = "na.interp")
 \arguments{
 \item{x}{Numeric, matrix.}
 
-\item{Interp}{Four interpolation methods are presented, "na.interp",
-"na.approx" and "na.spline". By default is the method
-"na.interp".}
+\item{interp}{Four interpolation methods are presented, "na.interp",
+"na.approx" and "na.spline". By default is the method "na.interp".}
 }
 \description{
 In order to eliminate outliers in the time series, Hamunyela et al. (2013)
@@ -30,8 +29,6 @@ series – (PVts-\eqn{\beta}). Ecological Indicators, 94, 367 379.
 
 \examples{
 library(ForesToolboxRS)
-library(forecast)
-library(zoo)
 
 x <- c(80,78,75,76,79,-100,82,76,81,77,76)
 smth <- smootH(x)
