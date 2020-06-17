@@ -2,9 +2,8 @@
 
 [![AppVeyor build
 status](https://ci.appveyor.com/api/projects/status/github/csaybar/forestoolboxrs?branch=dev&svg=true)](https://ci.appveyor.com/project/csaybar/forestoolboxrs)
-[![Travis build
-status](https://travis-ci.org/csaybar/ForesToolboxRS.svg?branch=master)](https://travis-ci.org/csaybar/ForesToolboxRS)
-[![image](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![Travis build status](https://travis-ci.org/ytarazona/ForesToolboxRS.svg?branch=master)](https://travis-ci.org/ytarazona/ForesToolboxRS)
+
 [![Codecov test
 coverage](https://codecov.io/gh/csaybar/ForesToolboxRS/branch/master/graph/badge.svg)](https://codecov.io/gh/csaybar/ForesToolboxRS?branch=dev)
 [![lifecycle](https://img.shields.io/badge/lifecycle-stable-brightgreen.svg)](https://www.tidyverse.org/lifecycle/#experimental)
